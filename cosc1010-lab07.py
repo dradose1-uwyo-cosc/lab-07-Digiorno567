@@ -1,14 +1,11 @@
-# Your Name Here
+# Ryan Dejournett
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
-# Sources, people worked with, help given to: 
-# your
-# comments
-# here
+# 10-28-2024
+# Lab 07
+# Lab Section: 14
 
 
+import math
 # Prompt the user for an upper bound 
 # Write a while loop that gives the factorial of that upper bound
 # This will need to be a positive number
@@ -17,11 +14,46 @@
     # If a user did not enter a number output a statement saying so
 # You will continue to prompt the user until a proper integer value is entered
 
-factorial = 1
+while True:
+    upperBound=input("input the upper bound, only positive integers: ")
+    if upperBound.isnumeric():
+        upperBound=int(upperBound)
+        break
+    else:
+        print("only input positive interger values")
 
-print(f"The result of the factorial based on the given bound is {factorial}")
+
+print(f"The result of the factorial based on the given bound is {math.factorial(upperBound)}")
 
 print("*"*75)
+outputValue=0
+check=True
+num_sum = 0 
+while check:
+    print("Input Exit to escape")
+    print(f"Current Value= {outputValue}")
+    while True:
+        upperBound=input("input the value to be added ")
+        if upperBound.isnumeric():
+            upperBound=int(upperBound)
+            outputValue+=upperBound
+            break
+        elif "-" in upperBound:
+            upperBoundCheck=upperBound.replace("-","0")
+            if upperBoundCheck.isnumeric():
+                upperBound=int(upperBound)
+                outputValue+=upperBound
+                break
+            else:
+                print("only input numeric Values")
+        elif upperBound.lower()=="exit":
+            print("Exiting")
+            check=False
+            break
+        else:
+            print("only input numeric values")
+            break
+    
 # Create a while loop that prompts a user for input of an integer values
 # Sum all inputs. When the user enters 'exit' (regardless of casing) end the loop
 # Upon ending the loop print the sum
@@ -37,9 +69,8 @@ print("*"*75)
 # All this together means you will have an intensive while loop that includes multiple if statements, likely with some nesting 
 # The sum should start at 0 
 
-num_sum = 0 
 
-print(f"Your final sum is {num_sum}")
+print(f"Your final sum is {outputValue}")
 
 print("*"*75)
 # Now you will be creating a two operand calculator
@@ -58,5 +89,43 @@ print("*"*75)
     # So, it should function the same for `5 + 6` as `5+6`
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
-
+while True:
+    operandCalc=input("input operation ")
+    if operandCalc.lower()=="exit":
+        break
+    elif "+" in operandCalc:
+        operationValues=operandCalc.split("+")
+        valueOne=int(operationValues[0])
+        valueTwo=int(operationValues[-1])
+        OutputValue=valueOne+valueTwo
+    elif "-" in operandCalc:
+        valueOne=int(operationValues[0])
+        valueTwo=int(operationValues[-1])
+        OutputValue=valueOne-valueTwo
+        operationValues=operandCalc.split("-")
+    elif "/" in operandCalc:
+        operationValues=operandCalc.split("/")
+        valueOne=int(operationValues[0])
+        valueTwo=int(operationValues[-1])
+        OutputValue=valueOne/valueTwo
+        operationValues=operandCalc.split("-")
+    elif "*" in operandCalc:
+        operationValues=operandCalc.split("*")
+        valueOne=int(operationValues[0])
+        valueTwo=int(operationValues[-1])
+        OutputValue=valueOne*valueTwo
+        operationValues=operandCalc.split("-")
+    elif "%" in operandCalc:
+        operationValues=operandCalc.split("%")
+        valueOne=int(operationValues[0])
+        valueTwo=int(operationValues[-1])
+        OutputValue=valueOne%valueTwo
+        operationValues=operandCalc.split("-")
+    print(valueOne)
+    print(valueTwo)
+    print(operationValues)
+    print(OutputValue)
+        
+    
+    
         
