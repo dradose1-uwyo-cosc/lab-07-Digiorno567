@@ -3,6 +3,7 @@
 # 10-28-2024
 # Lab 07
 # Lab Section: 14
+#help given to: wesley
 
 
 import math
@@ -92,6 +93,7 @@ print("*"*75)
 while True:
     operandCalc=input("input operation ")
     if operandCalc.lower()=="exit":
+        print("Exiting")
         break
     elif "+" in operandCalc:
         operationValues=operandCalc.split("+")
@@ -99,33 +101,30 @@ while True:
         valueTwo=int(operationValues[-1])
         OutputValue=valueOne+valueTwo
     elif "-" in operandCalc:
+        operationValues=operandCalc.split("-")
         valueOne=int(operationValues[0])
         valueTwo=int(operationValues[-1])
         OutputValue=valueOne-valueTwo
-        operationValues=operandCalc.split("-")
     elif "/" in operandCalc:
         operationValues=operandCalc.split("/")
         valueOne=int(operationValues[0])
         valueTwo=int(operationValues[-1])
         OutputValue=valueOne/valueTwo
-        operationValues=operandCalc.split("-")
     elif "*" in operandCalc:
         operationValues=operandCalc.split("*")
         valueOne=int(operationValues[0])
         valueTwo=int(operationValues[-1])
         OutputValue=valueOne*valueTwo
-        operationValues=operandCalc.split("-")
     elif "%" in operandCalc:
         operationValues=operandCalc.split("%")
         valueOne=int(operationValues[0])
         valueTwo=int(operationValues[-1])
         OutputValue=valueOne%valueTwo
-        operationValues=operandCalc.split("-")
-    print(valueOne)
-    print(valueTwo)
-    print(operationValues)
+   # print(valueOne)
+    #print(valueTwo)
+    #print(operationValues)
     print(OutputValue)
-        
+    
     
     
         
