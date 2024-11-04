@@ -91,35 +91,52 @@ print("*"*75)
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 while True:
+    valueOne=""
+    valueTwo=""
     operandCalc=input("input operation ")
     if operandCalc.lower()=="exit":
         print("Exiting")
         break
     elif "+" in operandCalc:
         operationValues=operandCalc.split("+")
-        valueOne=int(operationValues[0])
-        valueTwo=int(operationValues[-1])
-        OutputValue=valueOne+valueTwo
+        valueOne=operationValues[0].strip()
+        valueTwo=operationValues[-1].strip()
+        if valueOne.isnumeric() and valueTwo.isnumeric:
+            OutputValue=int(valueOne)+int(valueTwo)
+        else:
+            OutputValue="only input numbers"
     elif "-" in operandCalc:
         operationValues=operandCalc.split("-")
-        valueOne=int(operationValues[0])
-        valueTwo=int(operationValues[-1])
-        OutputValue=valueOne-valueTwo
+        valueOne=operationValues[0].strip()
+        valueTwo=operationValues[-1].strip()
+        if valueOne.isnumeric() and valueTwo.isnumeric:
+            OutputValue=int(valueOne)-int(valueTwo)
+        else:
+            OutputValue="only input numbers"
     elif "/" in operandCalc:
         operationValues=operandCalc.split("/")
-        valueOne=int(operationValues[0])
-        valueTwo=int(operationValues[-1])
-        OutputValue=valueOne/valueTwo
+        valueOne=operationValues[0].strip()
+        valueTwo=operationValues[-1].strip()
+        if valueOne.isnumeric() and valueTwo.isnumeric:
+            OutputValue=int(valueOne)/int(valueTwo)
+        else:
+            OutputValue="only input numbers"
     elif "*" in operandCalc:
         operationValues=operandCalc.split("*")
-        valueOne=int(operationValues[0])
-        valueTwo=int(operationValues[-1])
-        OutputValue=valueOne*valueTwo
+        valueOne=operationValues[0].strip()
+        valueTwo=operationValues[-1].strip()
+        if valueOne.isnumeric() and valueTwo.isnumeric:
+            OutputValue=int(valueOne)*int(valueTwo)
+        else:
+            OutputValue="only input numbers"
     elif "%" in operandCalc:
         operationValues=operandCalc.split("%")
-        valueOne=int(operationValues[0])
-        valueTwo=int(operationValues[-1])
-        OutputValue=valueOne%valueTwo
+        valueOne=operationValues[0].strip()
+        valueTwo=operationValues[-1].strip()
+        if valueOne.isnumeric() and valueTwo.isnumeric:
+            OutputValue=int(valueOne)%int(valueTwo)
+        else:
+            OutputValue="only input numbers"
    # print(valueOne)
     #print(valueTwo)
     #print(operationValues)
